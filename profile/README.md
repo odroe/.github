@@ -1,4 +1,4 @@
-<h1 align="center">Open. Share. Innovate.</h1>
+<h1 align="center">One dream, One life</h1>
 
 😊Yes, we advocate **innovation** and **openness**. `Odroe Inc.` was established in May 2019 and is committed to open source work!
 
