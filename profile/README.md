@@ -9,7 +9,6 @@ Hope to create a harmonious community.
 We create tools🔧 for the community and output products🍻 for the community!
  Everything we do is based on open source. Below are the open source projects we maintain:
  
- - [Socfony](https://socfony.com) - Socfony is an open source social application, and basic security modules and social function modules have been preset in the software. Whether it is to deploy Socfony directly or as a basis for program development is wonderful.
- - [OOTP（Open One-time Password）](https://github.com/odroe/ootp) - OOTP (Open One-time Password) is a supports multiple programming languages. The generated one-time passwords are fully compliant with HOTP (HMAC-based One-time Password) and TOTP (Time-based One-time Password). 🚀It's easy to use!
- - [Open Authenticator](https://github.com/odroe/ootp#open-authenticator) - Open Authenticator uses Flutter for development and uses the TOTP dart tool of the current project. The application code is completely open source, supervised by the community, and is an Authenticator with **no backdoor security**.
- - [Storage Box](https://github.com/odroe/storage-box) - Intuitive and easy-to-use storage box.
+ * [🍬 Socfony](https://socfony.com) - Socfony is an open source social application, and basic security modules and social function modules have been preset in the software. Whether it is to deploy Socfony directly or as a basis for program development is wonderful.
+ * [🍭 Prisma ORM for Dart](https://github.com/odroe/prisma-dart) - ◭ Next-generation ORM for Dart & Flutter | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB and CockroachDB
+ * [🦜 Parrot](https://github.com/odroe/parrot) - A progressive Dart framework for building efficient, reliable and scalable server-side applications.
