@@ -15,7 +15,7 @@ jobs:
       - run: npm ci
       - run: npx sponsorkit
         env:
-          SPONSORKIT_GITHUB_TOKEN: ${{ github.token }}
+          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
       - name: Generate new sponsors.svg file hash
         id: new
         run: echo "hash=${{ hashFiles('sponsors.svg') }}" >> $GITHUB_OUTPUT
