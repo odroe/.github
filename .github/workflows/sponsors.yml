@@ -2,6 +2,12 @@ name: Generate Sponsors
 on:
   schedule:
     - cron: "0 0 * * *"
+  push:
+    paths:
+      - package.json
+      - package-lock.json
+      - sponsors.svg
+      - .github/workflows/sponsors.yml
   workflow_dispatch:
 jobs:
   generate:
