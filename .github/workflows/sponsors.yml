@@ -1,0 +1,29 @@
+name: Generate Sponsors
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Generate old sponsors.svg file hash
+        id: old
+        run: echo "hash=${{ hashFiles('sponsors.svg') }}" >> $GITHUB_OUTPUT
+      - run: npm ci
+      - run: npx sponsorkit
+        env:
+          SPONSORKIT_GITHUB_TOKEN: ${{ github.token }}
+      - name: Generate new sponsors.svg file hash
+        id: new
+        run: echo "hash=${{ hashFiles('sponsors.svg') }}" >> $GITHUB_OUTPUT
+      - name: Check if sponsors.svg file has changed
+        if: steps.old.outputs.hash != steps.new.outputs.hash
+        run: |
+          git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+          git config --local user.name "${{ github.actor }}"
+          git add sponsors.svg
+          git commit -m "chore: update sponsors [skip ci]"
+          git push

@@ -12,8 +12,10 @@ export default defineConfig({
   width: 800,
   tiers: [
     {
-      monthlyDollars: 5,
-      preset: presets.base,
+      preset: {
+        ...presets.base,
+        name: presets.medium.name,
+      },
       title: "Sponsors",
     },
     {
