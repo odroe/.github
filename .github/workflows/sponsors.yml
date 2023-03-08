@@ -12,7 +12,6 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    environment: sponsors
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -22,7 +21,7 @@ jobs:
       - run: npm ci
       - run: npx sponsorkit
         env:
-          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORS_TOKEN }}
+          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
       - name: Generate new sponsors.svg file hash
         id: new
         run: echo "hash=${{ hashFiles('sponsors.svg') }}" >> $GITHUB_OUTPUT
