@@ -12,24 +12,23 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    if: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - name: Generate old sponsors.svg file hash
-        id: old
-        run: echo "hash=${{ hashFiles('sponsors.svg') }}" >> $GITHUB_OUTPUT
-      - run: npm ci
       - run: npx sponsorkit
         env:
           SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
-      - name: Generate new sponsors.svg file hash
-        id: new
-        run: echo "hash=${{ hashFiles('sponsors.svg') }}" >> $GITHUB_OUTPUT
       - name: Check if sponsors.svg file has changed
-        if: steps.old.outputs.hash != steps.new.outputs.hash
+        id: check
+        run: |
+          git diff --exit-code
+          echo "changed=$?" >> $GITHUB_OUTPUT
+      - name: Commit and push
+        if: ${{ steps.check.outputs.changed }}
         run: |
           git config --local user.email "${{ github.actor }}@users.noreply.github.com"
           git config --local user.name "${{ github.actor }}"
           git add sponsors.svg
-          git commit -m "chore: update sponsors [skip ci]"
+          git commit -m "chore: [skip ci] update sponsors"
           git push
