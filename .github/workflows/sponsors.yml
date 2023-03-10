@@ -26,6 +26,5 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           message: "Update sponsors"
-          add: "sponsors.svg"
           author_name: "Odroe Bot"
           author_email: "hello@odroe.com"
