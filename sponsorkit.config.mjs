@@ -8,7 +8,6 @@ export default defineConfig({
   outputDir: ".",
   name: "sponsors",
   formats: ["svg"],
-  cacheFile: "node_modules/.cache/sponsorkit.json",
   width: 800,
   tiers: [
     {
