@@ -3,8 +3,12 @@ on:
   schedule:
     - cron: "0 0 * * *"
   push:
-    branches:
-      - main
+    paths:
+      - package.json
+      - package-lock.json
+      - sponsors.svg
+      - .github/workflows/sponsors.yml
+      - sponsorkit.config.*
   workflow_dispatch:
 jobs:
   generate:
@@ -15,12 +19,19 @@ jobs:
         with:
           cache: npm
       - run: npm ci
-      - run: npx sponsorkit -f
+      - run: npx sponsorkit
         env:
           SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
+      - name: Check if sponsors.svg file has changed
+        id: check
+        run: |
+          git diff --exit-code
+          echo "changed=$?" >> $GITHUB_OUTPUT
       - name: Commit and push
-        uses: EndBug/add-and-commit@v7
-        with:
-          message: "Update sponsors"
-          author_name: "Odroe Bot"
-          author_email: "hello@odroe.com"
+        if: ${{ steps.check.outputs.changed }}
+        run: |
+          git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+          git config --local user.name "${{ github.actor }}"
+          git add sponsors.svg
+          git commit -m "chore: [skip ci] update sponsors" --all -s
+          git push
