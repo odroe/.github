@@ -24,9 +24,7 @@ jobs:
           SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
       - name: Check if sponsors.svg file has changed
         id: check
-        run: |
-          git diff --exit-code
-          echo "changed=$?" >> $GITHUB_OUTPUT
+        run: echo "changed=$(git diff --name-only | grep -c sponsors.svg)" >> $GITHUB_OUTPUT
       - name: Commit and push
         if: ${{ steps.check.outputs.changed }}
         run: |
