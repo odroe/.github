@@ -8,6 +8,7 @@ on:
       - package-lock.json
       - sponsors.svg
       - .github/workflows/sponsors.yml
+      - sponsorkit.config.*
   workflow_dispatch:
 jobs:
   generate:
