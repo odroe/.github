@@ -1,6 +1,6 @@
 {
   "private": true,
   "dependencies": {
-    "sponsorkit": "^0.9.0"
+    "sponsorkit": "^0.9.1"
   }
 }
