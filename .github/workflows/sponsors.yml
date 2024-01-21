@@ -21,7 +21,7 @@ jobs:
       - run: npm ci
       - run: npx sponsorkit
         env:
-          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
+          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Check if sponsors.svg file has changed
         id: check
         run: echo "changed=$(git diff --name-only | grep -c sponsors.svg)" >> $GITHUB_OUTPUT
