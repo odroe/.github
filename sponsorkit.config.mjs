@@ -1,13 +1,13 @@
-import { defineConfig, presets } from "sponsorkit";
+import { defineConfig, presets } from 'sponsorkit';
 
 export default defineConfig({
   github: {
-    login: "odroe",
-    type: "organization",
+    login: 'odroe',
+    type: 'organization',
   },
-  outputDir: ".",
-  name: "sponsors",
-  formats: ["svg"],
+  outputDir: '.',
+  name: 'sponsors',
+  formats: ['svg'],
   width: 800,
   tiers: [
     {
@@ -15,22 +15,22 @@ export default defineConfig({
         ...presets.base,
         name: presets.medium.name,
       },
-      title: "Sponsors",
+      title: 'Sponsors',
     },
     {
       monthlyDollars: 25,
       preset: presets.medium,
-      title: "Silver Sponsors",
+      title: 'Silver Sponsors',
     },
     {
       monthlyDollars: 50,
       preset: presets.large,
-      title: "Gold Sponsors",
+      title: 'Gold Sponsors',
     },
     {
       monthlyDollars: 100,
       preset: presets.xl,
-      title: "Platinum Sponsors",
+      title: 'Platinum Sponsors',
     },
   ],
 });
