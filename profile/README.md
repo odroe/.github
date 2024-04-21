@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="../logo.svg" height="200" />
+    <img src="https://github.com/odroe/.github/raw/main/logo.svg" height="200" />
 </p>
 <h1 align="center">Odroe</h1>
 <p align="center">
