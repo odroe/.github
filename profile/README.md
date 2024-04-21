@@ -1,8 +1,4 @@
 <p align="center">
-    <img src="https://github.com/odroe/.github/raw/main/logo.svg" height="200" />
-</p>
-<h1 align="center">Odroe</h1>
-<p align="center">
 Create many interesting things in Dart. Enjoy!
 </p>
 <div align="center">
