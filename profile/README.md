@@ -1,5 +1,5 @@
 <p align="center">
-Odroe is maintained as the public website and organization entry for Seven Du's open source work.
+Odroe is the public home for practical open source tools led by Seven Du.
 </p>
 
 <div align="center">
@@ -11,5 +11,5 @@ Odroe is maintained as the public website and organization entry for Seven Du's 
 </div>
 
 <p align="center">
-Current focus: file-routed Dart servers, reactive foundations, and AI-assisted DX. Historical Odroe packages remain archival rather than an actively maintained ecosystem surface.
+Current focus: Spry-led Dart servers, reactive foundations, and AI-assisted DX that ships across runtimes.
 </p>
